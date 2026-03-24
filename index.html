@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brainwave.io – Sound, that sounds better!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1600px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fff;
+      color: #161c2d;
+      transform-origin: top left;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── SHARED ── */
+    .btn-blue {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #022769;
+      border-radius: 8px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.5px;
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+    }
+    .btn-blue span {
+      background: linear-gradient(90deg, #E7A200, #FEE21C);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* ─────────────────────────── HERO DECO ─────────────────────────── */
+    .hero-deco {
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .hero-deco-br {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 2;
+      transform: rotate(180deg);
+    }
+
+    /* ─────────────────────────── HERO ─────────────────────────── */
+    .hero {
+      position: relative;
+      width: 1600px;
+      height: 1059px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('セクション1背景その2.png') center / cover no-repeat;
+      opacity: 0.5;
+      z-index: 0;
+    }
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    .header {
+      position: absolute;
+      top: 16px;
+      left: 25px;
+      width: 1561px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      z-index: 20;
+    }
+    .header-logo { display: none; }
+    .header-nav  { display: none; }
+    .header-btn {
+      position: absolute;
+      right: 0;
+      width: 247px;
+      height: 50px;
+      font-size: 17px;
+    }
+
+    /* Logo image */
+    .hero-airpod {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -148px;
+      width: auto;
+      height: auto;
+    }
+    .hero-airpod img {
+      display: block;
+      width: 900px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Hero text content */
+    .hero-content {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 250px;
+      width: 1280px;
+      text-align: center;
+    }
+    .hero-label { display: none; }
+    .hero-title {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+      color: #022769;
+      letter-spacing: -0.2px;
+      margin-bottom: 28px;
+      position: relative;
+      top: -19px;
+    }
+    .hero-quotes {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .hero-quotes p {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 44px;
+      color: #161c2d;
+      letter-spacing: -0.5px;
+    }
+    .hero-impact {
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 46px;
+      color: #022769;
+      letter-spacing: -0.8px;
+      margin-bottom: 24px;
+    }
+    .hero-service {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .hero-service p {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 40px;
+      color: #161c2d;
+      letter-spacing: -0.3px;
+    }
+    .hero-cta-main {
+      width: 460px;
+      height: 70px;
+      font-size: 20px;
+      margin: 0 auto;
+    }
+    .hero-cta  { display: none; }
+    .hero-watch { display: none; }
+
+    /* ─────────────────────────── CONTENT 01 ─────────────────────────── */
+    .content01 {
+      position: relative;
+      width: 1600px;
+      height: 1059px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .c01-left-panel {
+      position: absolute;
+      left: 0; top: 0;
+      width: 595px;
+      height: 1059px;
+      background: #fde7c3;
+      overflow: hidden;
+    }
+    .c01-left-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .c01-right {
+      position: absolute;
+      left: 640px;
+      top: 60px;
+      width: 920px;
+    }
+    .c01-quotes {
+      margin-bottom: 28px;
+    }
+    .c01-quotes p {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 36px;
+      color: #161c2d;
+      letter-spacing: -0.3px;
+    }
+    .c01-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .c01-pain-card {
+      background: #1a2755;
+      border: 2px solid #C9922A;
+      border-radius: 14px;
+      padding: 28px 18px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .c01-card-icon {
+      width: 64px;
+      height: 64px;
+      background: #2d4a9e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .c01-pain-card p {
+      color: #fff;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+    }
+    .c01-bottom-text {
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 48px;
+      color: #161c2d;
+      text-align: center;
+      letter-spacing: -0.6px;
+    }
+
+    /* ─────────────────────────── CONTENT 02 ─────────────────────────── */
+    .content02 {
+      position: relative;
+      width: 1600px;
+      height: 1059px;
+      background: #473bf0;
+      overflow: hidden;
+    }
+    .c02-right-panel {
+      position: absolute;
+      right: 0; top: 0;
+      width: 595px;
+      height: 1059px;
+      background: #fde7c3;
+      overflow: hidden;
+    }
+    .c02-right-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .c02-left {
+      position: absolute;
+      left: 340px;
+      top: 169px;
+      width: 421px;
+    }
+    .c02-title {
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 58px;
+      color: #fff;
+      letter-spacing: -1.8px;
+    }
+    .c02-desc {
+      margin-top: 15px;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 32px;
+      color: #fff;
+      opacity: 0.65;
+      letter-spacing: -0.2px;
+      width: 391px;
+    }
+    .testimonial {
+      margin-top: 116px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .testimonial-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 10px;
+    }
+    .testimonial-quote {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 32px;
+      color: #fff;
+      letter-spacing: -0.117px;
+    }
+    .testimonial-name {
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 26px;
+      color: #fff;
+      opacity: 0.65;
+      letter-spacing: -0.1px;
+    }
+
+    /* ─────────────────────────── CONTENT 03 ─────────────────────────── */
+    .content03 {
+      position: relative;
+      width: 1600px;
+      height: 1059px;
+      background: #161c2d;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .c03-main-title {
+      font-weight: 800;
+      font-size: 42px;
+      line-height: 60px;
+      letter-spacing: -1px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 60px;
+      max-width: 900px;
+    }
+    .c03-cards {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+    .c03-card {
+      position: relative;
+      width: 520px;
+      border: 2px solid #C9922A;
+      border-radius: 20px;
+      padding: 48px 48px 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+    .c03-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+      z-index: 0;
+      border-radius: 18px;
+    }
+    .c03-card-coach::before {
+      background-image: url('コーチ画像.png');
+    }
+    .c03-card-ai::before {
+      background-image: url('AIアイコン.png');
+    }
+    .c03-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .c03-card-icon {
+      font-size: 52px;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    .c03-card-label {
+      font-weight: 800;
+      font-size: 26px;
+      line-height: 38px;
+      color: #C9922A;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .c03-card-desc {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: -0.2px;
+    }
+    .c03-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 1120px;
+    }
+    .c03-bottom-text {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 36px;
+      color: #fff;
+      letter-spacing: -0.4px;
+    }
+    .c03-cta {
+      width: 247px;
+      height: 56px;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────── PRICING (section5) ─────────────────────────── */
+    .pricing {
+      position: relative;
+      width: 1600px;
+      min-height: 1059px;
+      background: #fff;
+      padding: 50px 80px 80px;
+    }
+    .s5-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      margin-bottom: 44px;
+    }
+    .s5-logo {
+      height: 200px;
+      width: auto;
+      display: block;
+    }
+    .s5-cta {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 247px;
+      height: 50px;
+      font-size: 17px;
+    }
+    .s5-step-box {
+      border: 1.5px solid #d0d5dd;
+      border-radius: 20px;
+      padding: 44px 60px 50px;
+      margin-bottom: 52px;
+    }
+    .s5-step-title {
+      font-weight: 800;
+      font-size: 34px;
+      line-height: 48px;
+      color: #161c2d;
+      text-align: center;
+      margin-bottom: 36px;
+      letter-spacing: -0.8px;
+    }
+    .s5-step-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .s5-caption {
+      text-align: center;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 46px;
+      color: #022769;
+      letter-spacing: -0.6px;
+    }
+
+
+    /* ─────────────────────────── CTA IMAGE ─────────────────────────── */
+    .cta-image {
+      position: relative;
+      width: 1600px;
+      height: 1059px;
+      overflow: hidden;
+    }
+    .cta-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('セクション6背景.png') center / cover no-repeat;
+      opacity: 0.6;
+      z-index: 0;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 50px 80px;
+      gap: 0;
+    }
+    .cta-main-title {
+      font-weight: 800;
+      font-size: 46px;
+      line-height: 64px;
+      background: linear-gradient(90deg, #E7A200, #FEE21C);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-align: center;
+      margin-bottom: 16px;
+      letter-spacing: -0.8px;
+    }
+    .cta-logo-wrap {
+      margin-bottom: 20px;
+    }
+    .cta-logo-wrap img {
+      width: 580px;
+      height: auto;
+      display: block;
+    }
+    .cta-embed-box {
+      width: 940px;
+      min-height: 110px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1.5px solid #d0d5dd;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cta-click-text {
+      font-weight: 700;
+      font-size: 22px;
+      color: #161c2d;
+      margin-bottom: 24px;
+    }
+    .cta-action-buttons {
+      display: flex;
+      gap: 28px;
+    }
+    .cta-action-btn {
+      width: 440px;
+      padding: 26px 28px;
+      background: #1a2755;
+      border: 2px solid #C9922A;
+      border-radius: 12px;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ─────────────────────────── FOOTER ─────────────────────────── */
+    footer {
+      background: #fff;
+      padding: 30px 0 24px;
+    }
+    .footer-inner {
+      width: 1112px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      height: 28px;
+    }
+    .footer-logo {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #161c2d;
+      letter-spacing: -0.133px;
+    }
+    .footer-links {
+      margin-left: auto;
+      display: flex;
+      gap: 28px;
+    }
+    .footer-links a {
+      font-weight: 400;
+      font-size: 15px;
+      color: #161c2d;
+      opacity: 0.7;
+      letter-spacing: -0.1px;
+    }
+    .footer-links a:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero">
+
+  <!-- 左上装飾 -->
+  <div class="hero-deco">
+    <svg width="280" height="420" viewBox="0 0 280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M280 0 C 200 80, 100 200, 0 420" stroke="#022769" stroke-width="3.5" fill="none" opacity="0.95"/>
+      <path d="M255 0 C 175 80, 75 200, -25 420" stroke="#022769" stroke-width="3" fill="none" opacity="0.85"/>
+      <path d="M230 0 C 150 80, 50 200, -50 420" stroke="#022769" stroke-width="2.5" fill="none" opacity="0.75"/>
+      <path d="M205 0 C 125 80, 25 200, -75 420" stroke="#022769" stroke-width="2" fill="none" opacity="0.65"/>
+      <path d="M180 0 C 100 80, 0 200, -100 420" stroke="#022769" stroke-width="2" fill="none" opacity="0.55"/>
+      <path d="M155 0 C 75 80, -25 200, -125 420" stroke="#022769" stroke-width="1.5" fill="none" opacity="0.45"/>
+      <path d="M268 0 C 188 80, 88 200, -12 420" stroke="#ffffff" stroke-width="1.2" fill="none" opacity="0.5"/>
+      <path d="M243 0 C 163 80, 63 200, -37 420" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.35"/>
+    </svg>
+  </div>
+
+  <!-- 右下装飾 -->
+  <div class="hero-deco-br">
+    <svg width="280" height="420" viewBox="0 0 280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M280 0 C 200 80, 100 200, 0 420" stroke="#022769" stroke-width="3.5" fill="none" opacity="0.95"/>
+      <path d="M255 0 C 175 80, 75 200, -25 420" stroke="#022769" stroke-width="3" fill="none" opacity="0.85"/>
+      <path d="M230 0 C 150 80, 50 200, -50 420" stroke="#022769" stroke-width="2.5" fill="none" opacity="0.75"/>
+      <path d="M205 0 C 125 80, 25 200, -75 420" stroke="#022769" stroke-width="2" fill="none" opacity="0.65"/>
+      <path d="M180 0 C 100 80, 0 200, -100 420" stroke="#022769" stroke-width="2" fill="none" opacity="0.55"/>
+      <path d="M155 0 C 75 80, -25 200, -125 420" stroke="#022769" stroke-width="1.5" fill="none" opacity="0.45"/>
+      <path d="M268 0 C 188 80, 88 200, -12 420" stroke="#ffffff" stroke-width="1.2" fill="none" opacity="0.5"/>
+      <path d="M243 0 C 163 80, 63 200, -37 420" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.35"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="btn-blue header-btn"><span>無料相談を予約する</span></a>
+  </header>
+
+  <!-- Logo image -->
+  <div class="hero-airpod">
+    <img src="../サービスロゴ/サービスロゴ.png" alt="IgnAIte" style="width:900px;height:auto;display:block;">
+  </div>
+
+  <!-- Text content -->
+  <div class="hero-content">
+    <p class="hero-title">認知科学コーチングとAIコンサルで全ての人の可能性を広げる</p>
+    <div class="hero-quotes">
+      <p>「特出した能力がないから自分は何もできない」</p>
+      <p>「満足してないけど何がしたいか分からない」</p>
+    </div>
+    <p class="hero-impact">そう思っている人ほど、AIで人生を変えられる</p>
+    <div class="hero-service">
+      <p>あなただけの「強み」を脳科学に基づいたコーチング理論で特定し、</p>
+      <p>あなたの強みに基づいたAIビジネスを設計。</p>
+      <p>そして収益化まで徹底的にサポート。</p>
+      <p>理想だけで終わらない人生を動かす0→1支援サービス。</p>
+    </div>
+    <a href="#" class="btn-blue hero-cta-main"><span>無料相談を予約する</span></a>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════ CONTENT 01 ═══════════════════════ -->
+<section class="content01">
+
+  <!-- Left peach panel with runner image -->
+  <div class="c01-left-panel">
+    <img src="セクション2画像.png" alt="ビジネスマン">
+  </div>
+
+  <!-- Right content -->
+  <div class="c01-right">
+    <div class="c01-quotes">
+      <p>「結局、自分に個人事業や副業は無理だと思ってませんか？」</p>
+      <p>「変わりたいのに、情報収集だけして時間だけ過ぎていませんか？」</p>
+    </div>
+    <div class="c01-cards-grid">
+      <div class="c01-pain-card">
+        <p>今の仕事は安定しているはずなのに、なぜか満足できずモヤモヤする</p>
+      </div>
+      <div class="c01-pain-card">
+        <p>副業/個人事業に憧れ・興味はあるが自分には無理だと思っている</p>
+      </div>
+      <div class="c01-pain-card">
+        <p>自分にはスキルも経験もないから何もできないと思っている</p>
+      </div>
+      <div class="c01-pain-card">
+        <p>AIの技術がすごいのは分かるが、どう活かせばいいか分からない</p>
+      </div>
+      <div class="c01-pain-card">
+        <p>いろんな情報は見ているが、現実は何も変わっていない</p>
+      </div>
+      <div class="c01-pain-card">
+        <p>既に事業をおこなっているがもっと拡大していきたい</p>
+      </div>
+    </div>
+    <p class="c01-bottom-text">そのままでは、一生変わりません</p>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════ CONTENT 02 ═══════════════════════ -->
+<section class="content02">
+
+  <!-- Right peach panel with person image -->
+  <div class="c02-right-panel">
+    <img src="セクション3画像.png" alt="ビジネスマン">
+  </div>
+
+  <!-- Left content -->
+  <div class="c02-left">
+    <h2 class="c02-title">Comfortable buds with better sound.</h2>
+    <p class="c02-desc">We share common trends and strategies for improving your rental income.</p>
+
+    <div class="testimonial">
+      <img class="testimonial-avatar" src="http://localhost:3845/assets/06e1251eb7e637b295ecff021b9bfbaae1d3c327.png" alt="Rhoda Brady">
+      <div>
+        <p class="testimonial-quote">"You made it so simple. My new site is so much faster and easier to work with than my old site."</p>
+        <p class="testimonial-name">Rhoda Brady</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════ CONTENT 03 ═══════════════════════ -->
+<section class="content03">
+
+  <h2 class="c03-main-title">認知科学コーチング × AIコンサルで<br>確実に人生を前進させる</h2>
+
+  <div class="c03-cards">
+
+    <!-- 左カード：コーチングだけ -->
+    <div class="c03-card c03-card-coach">
+      <p class="c03-card-label">コーチングだけ</p>
+      <p class="c03-card-desc">ビジョンやゴールを言語化できても、<br>具体的スキルが無かったり、なかなか行動に移せず<br>現実は変わらないまま</p>
+    </div>
+
+    <!-- 右カード：AIインプットだけ -->
+    <div class="c03-card c03-card-ai">
+      <p class="c03-card-label">AIインプットだけ</p>
+      <p class="c03-card-desc">AIツールの知識や情報を大量に仕入れても、<br>自分の強みや方向性が定まっていなければ何も動けない。<br>情報過多で動けなくなるだけ。</p>
+    </div>
+
+  </div>
+
+  <div class="c03-bottom">
+    <p class="c03-bottom-text">コーチングだけでも、AI学習だけでも変わらない。<br>だからIgnAIteは両方やる</p>
+    <a href="#" class="btn-blue c03-cta"><span>無料相談を予約する</span></a>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════ PRICING (section5) ═══════════════════════ -->
+<section class="pricing">
+
+  <!-- ヘッダー：ロゴ中央 + CTA右上 -->
+  <div class="s5-header">
+    <img class="s5-logo" src="../サービスロゴ/サービスロゴ.png" alt="IgnAIte" style="height:200px;width:auto;display:block;">
+    <a href="#" class="btn-blue s5-cta"><span>無料相談を予約する</span></a>
+  </div>
+
+  <!-- ステップ図ボックス -->
+  <div class="s5-step-box">
+    <img class="s5-step-img" src="ステップ図.png" alt="サービス提供の6ステップ">
+  </div>
+
+  <!-- キャプション -->
+  <p class="s5-caption">あなたにマッチしたAIビジネスでの初収益までサポートします</p>
+
+</section>
+
+
+
+<!-- ═══════════════════════ CTA IMAGE (section6) ═══════════════════════ -->
+<section class="cta-image">
+  <div class="cta-inner">
+
+    <h2 class="cta-main-title">まずは無料相談であなたの可能性を見てみませんか？</h2>
+
+    <div class="cta-logo-wrap">
+      <img src="../サービスロゴ/サービスロゴ.png" alt="IgnAIte" style="width:900px;height:auto;display:block;">
+    </div>
+
+    <a href="#" class="btn-blue" style="width:460px;height:70px;font-size:20px;margin-bottom:24px;"><span>無料相談を予約する</span></a>
+
+    <div class="cta-action-buttons">
+      <a href="#" class="cta-action-btn">まずは自分の可能性を聞いてみる</a>
+      <a href="#" class="cta-action-btn">まずは自分にあったAI副業/個人事業<br>の方向性をまずは聞いてみる</a>
+    </div>
+
+  </div>
+</section>
+
+
+<script>
+  function scaleToFit() {
+    var scale = window.innerWidth / 1600;
+    document.body.style.height = 'auto';
+    document.body.style.transform = 'scale(' + scale + ')';
+    document.body.style.transformOrigin = 'top left';
+    var contentHeight = document.body.scrollHeight;
+    document.body.style.height = contentHeight + 'px';
+    document.documentElement.style.height = (contentHeight * scale) + 'px';
+    document.documentElement.style.overflowX = 'hidden';
+  }
+  scaleToFit();
+  window.addEventListener('resize', scaleToFit);
+
+</script>
+</body>
+</html>
