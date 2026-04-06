@@ -68,7 +68,7 @@ export function Section5() {
               <span style={{ flexShrink: 0, width: '28px', height: '28px', borderRadius: '50%', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', color: '#022769', fontWeight: 800, fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{step.num}</span>
               <div>
                 <p style={{ ...goldGradientText, fontWeight: 800, fontSize: '16px', lineHeight: '1.4', marginBottom: '2px' }}>{step.title}</p>
-                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', lineHeight: '1.5' }}>{step.desc}</p>
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', lineHeight: '1.5', fontWeight: 700, whiteSpace: step.num === 5 ? 'nowrap' : 'normal' }}>{step.num === 5 ? '案件サイトなども活用し一緒に収益獲得を目指す' : step.desc}</p>
               </div>
             </div>
           ))}
