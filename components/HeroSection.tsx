@@ -13,7 +13,7 @@ export function HeroSection() {
       <section ref={ref} style={{ width: '100%', background: '#fff', overflow: 'hidden' }}>
         {/* Video */}
         <div style={{ width: '100%', height: '56vw', overflow: 'hidden', position: 'relative' }}>
-          <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
+          <video autoPlay loop muted playsInline preload="auto" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
             <source src="/mobile-hero.mp4" type="video/mp4" />
           </video>
         </div>
