@@ -58,29 +58,45 @@ export function Section5() {
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/section5-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15, zIndex: 0 }} />
         {/* Steps */}
         <div style={{ position: 'relative', zIndex: 1 }}>
-        <h3 style={{ fontWeight: 800, fontSize: '18px', color: '#022769', textAlign: 'center', marginBottom: '20px', marginTop: '-38px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+        <motion.h3
+          style={{ fontWeight: 800, fontSize: '18px', color: '#022769', textAlign: 'center', marginBottom: '20px', marginTop: '-38px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}
+          initial={{ opacity: 0, y: -15 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <img src="/images/logo.png" alt="IgnAIte" style={{ height: '130px', width: 'auto', display: 'inline-block' }} />
           <span style={{ marginLeft: '-38px' }}>6ステップ</span>
-        </h3>
+        </motion.h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '32px', marginTop: '-57px', width: 'fit-content', marginLeft: 'auto', marginRight: 'auto', alignItems: 'stretch' }}>
-          {steps.map((step) => (
-            <div key={step.num} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'linear-gradient(135deg, #0a1e4a 0%, #0d2460 60%, #0a1a40 100%)', border: '1.5px solid #1a3a7a', borderRadius: '12px', padding: '14px 16px' }}>
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.num}
+              style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'linear-gradient(135deg, #0a1e4a 0%, #0d2460 60%, #0a1a40 100%)', border: '1.5px solid #1a3a7a', borderRadius: '12px', padding: '14px 16px' }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.45, delay: 0.2 + i * 0.07 }}
+            >
               <span style={{ flexShrink: 0, width: '28px', height: '28px', borderRadius: '50%', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', color: '#022769', fontWeight: 800, fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{step.num}</span>
               <div>
                 <p style={{ ...goldGradientText, fontWeight: 800, fontSize: '16px', lineHeight: '1.4', marginBottom: '2px' }}>{step.title}</p>
                 <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', lineHeight: '1.5', fontWeight: 700, whiteSpace: step.num === 5 ? 'nowrap' : 'normal' }}>{step.num === 5 ? '案件サイトなども活用し一緒に収益獲得を目指す' : step.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Text */}
-        <div style={{ fontSize: '14px', color: '#022769', lineHeight: '1.6', fontWeight: 800, textAlign: 'center', marginTop: '38px' }}>
+        <motion.div
+          style={{ fontSize: '14px', color: '#022769', lineHeight: '1.6', fontWeight: 800, textAlign: 'center', marginTop: '38px' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
           <p style={{ color: '#E7A200', fontWeight: 800, marginBottom: '16px' }}>IgnAIteはあなたの強みを見つけ、<br />AIを使って必ず稼げる状態までサポートします。</p>
           <p style={{ marginBottom: '16px' }}>あなたは強み,能力がないのではありません。<br />自分の強み,能力に気づいていないだけです。</p>
           <p style={{ marginBottom: '16px' }}>IgnAIteは個人に合ったAIの活かし方を明確にし、<br />必要なAI知識の学習から案件納品まで<br />一気通貫で伴走する唯一無二のサービスです。</p>
           <p>これまで一部のすごい人だけのものだった挑戦が、<br />あなたの現実になります。</p>
-        </div>
+        </motion.div>
         </div>
       </section>
     )

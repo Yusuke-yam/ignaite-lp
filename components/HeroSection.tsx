@@ -20,10 +20,21 @@ export function HeroSection() {
 
         {/* Text content */}
         <div style={{ padding: '32px 24px', background: '#fff', textAlign: 'center', marginTop: '-75px' }}>
-          <img src="/images/logo.png" alt="IgnAIte" style={{ width: '100%', maxWidth: '360px', height: 'auto', display: 'block', margin: '0 auto 24px' }} />
+          <motion.img
+            src="/images/logo.png" alt="IgnAIte"
+            style={{ width: '100%', maxWidth: '360px', height: 'auto', display: 'block', margin: '0 auto 24px' }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
 
           <div style={{ marginTop: '-113px' }}>
-            <p style={{ fontWeight: 700, fontSize: '18px', lineHeight: '1.6', color: '#022769', marginBottom: '24px' }}>
+            <motion.p
+              style={{ fontWeight: 700, fontSize: '18px', lineHeight: '1.6', color: '#022769', marginBottom: '24px' }}
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
               <span style={{ whiteSpace: 'nowrap' }}>
                 <span style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>認知科学コーチング</span>
                 ×
@@ -32,11 +43,17 @@ export function HeroSection() {
               </span>
               <br />
               あなたのもつ可能性を、<mark style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', color: '#022769', padding: '0 3px', borderRadius: '2px' }}>収入</mark>に変える。
-            </p>
+            </motion.p>
 
-            <a href="https://lin.ee/OatLRGd" className="btn-blue" target="_blank" rel="noopener noreferrer" style={{ width: '80%', maxWidth: '280px', height: '52px', fontSize: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto' }}>
-              <span>無料相談を予約する</span>
-            </a>
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <a href="https://lin.ee/OatLRGd" className="btn-blue" target="_blank" rel="noopener noreferrer" style={{ width: '80%', maxWidth: '280px', height: '52px', fontSize: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto' }}>
+                <span>無料相談を予約する</span>
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>

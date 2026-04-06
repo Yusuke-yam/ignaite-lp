@@ -51,35 +51,48 @@ export function Section2() {
 
         {/* Content */}
         <div style={{ padding: '32px 20px', position: 'relative', zIndex: 1 }}>
-          <p style={{ fontWeight: 700, fontSize: '15px', color: '#161c2d', marginBottom: '10px', lineHeight: '1.5', textAlign: 'center' }}>
-            「いつか副業や個人事業でもっと稼ぎたい」<br />
-            「いつか環境に縛られずに自由に働きたい」
-          </p>
-          <p style={{ fontWeight: 700, fontSize: '15px', color: '#161c2d', marginBottom: '24px', lineHeight: '1.5', textAlign: 'center' }}>
-            <span style={{ display: 'block', marginBottom: '10px' }}>でも</span>
-            「自分には特別な経験も能力もない」<br />
-            そんな自分の思い込みで夢を諦めてませんか？
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <p style={{ fontWeight: 700, fontSize: '15px', color: '#161c2d', marginBottom: '10px', lineHeight: '1.5', textAlign: 'center' }}>
+              「いつか副業や個人事業でもっと稼ぎたい」<br />
+              「いつか環境に縛られずに自由に働きたい」
+            </p>
+            <p style={{ fontWeight: 700, fontSize: '15px', color: '#161c2d', marginBottom: '24px', lineHeight: '1.5', textAlign: 'center' }}>
+              <span style={{ display: 'block', marginBottom: '10px' }}>でも</span>
+              「自分には特別な経験も能力もない」<br />
+              そんな自分の思い込みで夢を諦めてませんか？
+            </p>
+          </motion.div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
             {cards.map((card, i) => (
-              <div key={i} style={{
-                ...cardBase,
-                padding: '14px 14px',
-                width: '100%',
-              }}>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.12 }}
+                style={{ ...cardBase, padding: '14px 14px', width: '100%' }}
+              >
                 <p style={{ ...goldGradientText, fontWeight: 700, fontSize: '15px', lineHeight: '1.6', marginBottom: '6px', whiteSpace: 'pre-line' }}>{i === 0 ? '自分で稼ぐのは、「一部のすごい人の話」\nだと思っている' : card.title}</p>
                 <p style={{ color: '#fff', fontSize: '15px', lineHeight: '1.7', whiteSpace: 'pre-line', fontWeight: 700 }}>{card.body}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <p style={{ fontWeight: 700, fontSize: '14px', color: '#161c2d', textAlign: 'center', lineHeight: '1.5' }}>
+          <motion.p
+            style={{ fontWeight: 700, fontSize: '14px', color: '#161c2d', textAlign: 'center', lineHeight: '1.5' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
             こんな人が多すぎます。<br />本当にもったいないです。<br />
             <br />
             なぜなら今の世の中、AIを使いこなせば<br />
             副業や個人事業で誰でも絶対に収益化できるからです。
-          </p>
+          </motion.p>
         </div>
       </section>
     )

@@ -70,25 +70,45 @@ export function Section6() {
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/section6-bg2.png)', backgroundSize: 'cover', backgroundPosition: '95% center', opacity: 0.6, zIndex: 0 }} />
 
         <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '40px 0' }}>
-          <div style={{ fontWeight: 700, fontSize: '4.6vw', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', whiteSpace: 'nowrap' }}>
+          <motion.div
+            style={{ fontWeight: 700, fontSize: '4.6vw', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', whiteSpace: 'nowrap' }}
+            initial={{ opacity: 0, y: -15 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <p style={{ marginBottom: '4px' }}>多くの方が成果を出されています。</p>
             <p>あなたも自分の可能性を見てみませんか？</p>
-          </div>
+          </motion.div>
 
-          <h2 style={{ fontWeight: 800, fontSize: '14px', lineHeight: '1.4', textAlign: 'center', marginTop: '95px', marginBottom: '57px', color: '#022769', whiteSpace: 'nowrap' }}>
+          <motion.h2
+            style={{ fontWeight: 800, fontSize: '14px', lineHeight: '1.4', textAlign: 'center', marginTop: '95px', marginBottom: '57px', color: '#022769', whiteSpace: 'nowrap' }}
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             ▼クライアントの方からいただいたお声の一例
-          </h2>
+          </motion.h2>
 
           {/* カルーセル */}
-          <div style={{ width: '90%', marginBottom: '36px', marginTop: '-57px' }}>
+          <motion.div
+            style={{ width: '90%', marginBottom: '36px', marginTop: '-57px' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <Carousel height="240px" />
-          </div>
+          </motion.div>
 
-          <div style={{ marginTop: '-19px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <motion.div
+            style={{ marginTop: '-19px', width: '100%', display: 'flex', justifyContent: 'center' }}
+            initial={{ opacity: 0, y: 15 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <a href="https://lin.ee/OatLRGd" className="btn-blue pulse-btn" target="_blank" rel="noopener noreferrer" style={{ width: '80%', maxWidth: '280px', height: '52px', fontSize: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}>
               <span>無料相談を予約する</span>
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
     )
