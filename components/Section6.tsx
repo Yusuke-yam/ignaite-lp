@@ -66,10 +66,10 @@ export function Section6() {
 
   if (isMobile) {
     return (
-      <section ref={ref} style={{ width: '100%', position: 'relative', overflow: 'hidden', padding: '48px 20px 56px' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/section6-bg2.png)', backgroundSize: 'cover', backgroundPosition: '95% center', opacity: 0.6, zIndex: 0 }} />
+      <section ref={ref} style={{ width: '100%', position: 'relative', overflow: 'hidden', padding: '24px 20px 28px' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/section6-bg.png)', backgroundSize: 'cover', backgroundPosition: '95% center', opacity: 0.6, zIndex: 0 }} />
 
-        <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '40px 0' }}>
+        <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px 0' }}>
           <motion.div
             style={{ fontWeight: 700, fontSize: '4.6vw', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', whiteSpace: 'nowrap' }}
             initial={{ opacity: 0, y: -15 }}
@@ -123,9 +123,9 @@ export function Section6() {
       ref={ref}
       style={{ width: '1600px', height: 'var(--section-height)', position: 'relative', overflow: 'hidden' }}
     >
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/section6-bg2.png)', backgroundSize: 'cover', backgroundPosition: '95% center', opacity: 0.6, zIndex: 0 }} />
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/section6-bg.png)', backgroundSize: 'cover', backgroundPosition: '95% center', opacity: 0.6, zIndex: 0 }} />
 
-      <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', padding: '40px 80px' }}>
+      <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', padding: '20px 80px' }}>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
