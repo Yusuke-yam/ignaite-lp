@@ -49,6 +49,13 @@ body {
   background-clip: text;
 }
 
+@media (max-width: 767px) {
+  body {
+    width: 100% !important;
+    transform: none !important;
+  }
+}
+
 @keyframes pulse-scale {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.03); }

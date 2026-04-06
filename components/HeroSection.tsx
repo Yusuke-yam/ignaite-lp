@@ -1,21 +1,61 @@
 'use client'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useMobile } from '@/hooks/useMobile'
 
 export function HeroSection() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: false, amount: 0.2 })
+  const isMobile = useMobile()
+
+  if (isMobile) {
+    return (
+      <section ref={ref} style={{ width: '100%', background: '#fff', overflow: 'hidden' }}>
+        {/* Video */}
+        <div style={{ width: '100%', height: '56vw', overflow: 'hidden', position: 'relative' }}>
+          <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
+            <source src="/mobile-hero.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Text content */}
+        <div style={{ padding: '32px 24px', background: '#fff', textAlign: 'center', marginTop: '-75px' }}>
+          <img src="/images/logo.png" alt="IgnAIte" style={{ width: '120%', maxWidth: '480px', height: 'auto', display: 'block', margin: '0 auto 24px' }} />
+
+          <div style={{ marginTop: '-113px' }}>
+            <p style={{ fontWeight: 700, fontSize: '22px', lineHeight: '1.6', color: '#022769', marginBottom: '24px' }}>
+              <span style={{ whiteSpace: 'nowrap' }}>
+                <span style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>認知科学コーチング</span>
+                ×
+                <span style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>AIコンサル</span>
+                で、
+              </span>
+              <br />
+              あなたのもつ可能性を、<mark style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', color: '#022769', padding: '0 3px', borderRadius: '2px' }}>収入</mark>に変える。
+            </p>
+
+            <a href="https://lin.ee/OatLRGd" className="btn-blue" target="_blank" rel="noopener noreferrer" style={{ width: '80%', maxWidth: '280px', height: '52px', fontSize: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto' }}>
+              <span>無料相談を予約する</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section
       ref={ref}
-      style={{ width: '1600px', height: '1059px', background: '#fff', position: 'relative', overflow: 'hidden' }}
+      style={{ width: '1600px', height: 'var(--section-height)', background: '#fff', position: 'relative', overflow: 'hidden' }}
     >
-      {/* Background */}
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5, zIndex: 0 }} />
+      {/* White background panel (right side) */}
+      <div style={{
+        position: 'absolute', right: 0, top: 0, width: '900px', height: '100%',
+        background: '#fff', clipPath: 'polygon(160px 0, 100% 0, 100% 100%, 0 100%)', zIndex: 0,
+      }} />
 
       {/* SVG top-left */}
-      <svg style={{ position: 'absolute', top: 0, left: 0, zIndex: 2, pointerEvents: 'none' }} width="280" height="420" viewBox="0 0 280 420" fill="none">
+      <svg style={{ position: 'absolute', top: 0, left: 0, zIndex: 3, pointerEvents: 'none' }} width="280" height="420" viewBox="0 0 280 420" fill="none">
         <path d="M280 0 C 200 80, 100 200, 0 420" stroke="#022769" strokeWidth="3.5" fill="none" opacity="0.95"/>
         <path d="M255 0 C 175 80, 75 200, -25 420" stroke="#022769" strokeWidth="3" fill="none" opacity="0.85"/>
         <path d="M230 0 C 150 80, 50 200, -50 420" stroke="#022769" strokeWidth="2.5" fill="none" opacity="0.75"/>
@@ -27,7 +67,7 @@ export function HeroSection() {
       </svg>
 
       {/* SVG bottom-right */}
-      <svg style={{ position: 'absolute', bottom: 0, right: 0, zIndex: 2, pointerEvents: 'none', transform: 'rotate(180deg)' }} width="280" height="420" viewBox="0 0 280 420" fill="none">
+      <svg style={{ position: 'absolute', bottom: 0, right: 0, zIndex: 3, pointerEvents: 'none', transform: 'rotate(180deg)' }} width="280" height="420" viewBox="0 0 280 420" fill="none">
         <path d="M280 0 C 200 80, 100 200, 0 420" stroke="#022769" strokeWidth="3.5" fill="none" opacity="0.95"/>
         <path d="M255 0 C 175 80, 75 200, -25 420" stroke="#022769" strokeWidth="3" fill="none" opacity="0.85"/>
         <path d="M230 0 C 150 80, 50 200, -50 420" stroke="#022769" strokeWidth="2.5" fill="none" opacity="0.75"/>
@@ -44,72 +84,50 @@ export function HeroSection() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.2 }}
         style={{ position: 'absolute', top: '16px', left: '25px', width: '1561px', height: '50px', display: 'flex', alignItems: 'center', zIndex: 20 }}
-      >
-        <a href="#" className="btn-blue" style={{ position: 'absolute', right: 0, width: '247px', height: '50px', fontSize: '17px' }}>
-          <span>無料相談を予約する</span>
-        </a>
-      </motion.header>
+      />
+
+      {/* Video panel */}
+      <div style={{
+        position: 'absolute', left: 0, top: 0, width: '900px', height: '100%',
+        zIndex: 1, clipPath: 'polygon(0 0, 880px 0, 720px 100%, 0 100%)', overflow: 'hidden',
+      }}>
+        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
+          <source src="/0330-6.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       {/* Logo */}
-      <div style={{ position: 'absolute', top: '-100px', left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-        >
-          <img src="/images/logo.png" alt="IgnAIte" style={{ width: '900px', height: 'auto', display: 'block', objectFit: 'contain' }} />
+      <div style={{ position: 'absolute', top: '-80px', left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
+        <motion.div initial={{ opacity: 0, y: -30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.2 }}>
+          <img src="/images/logo.png" alt="IgnAIte" style={{ width: '640px', height: 'auto', display: 'block', objectFit: 'contain' }} />
         </motion.div>
       </div>
 
       {/* Main content */}
-      <div style={{ position: 'absolute', top: '250px', left: '50%', transform: 'translateX(-50%)', width: '1280px', textAlign: 'center', zIndex: 1 }}>
+      <div style={{ position: 'absolute', top: '258px', left: '901px', width: '620px', textAlign: 'center', zIndex: 1 }}>
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          style={{ display: 'block', fontWeight: 600, fontSize: '20px', lineHeight: '32px', color: '#022769', letterSpacing: '-0.2px', marginBottom: '28px', position: 'relative', top: '-19px' }}
+          style={{ display: 'block', fontWeight: 700, fontSize: '39px', lineHeight: '64px', color: '#022769', letterSpacing: '-0.5px', position: 'relative', top: '-19px' }}
         >
-          認知科学コーチングとAIコンサルで全ての人の可能性を広げる
+          <span style={{ whiteSpace: 'nowrap' }}>
+            <span style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>認知科学コーチング</span>
+            ×
+            <span style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>AIコンサル</span>
+            で、
+          </span>
+          <br />
+          <span style={{ whiteSpace: 'nowrap' }}>あなたのもつ可能性を、<mark style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', color: '#022769', padding: '0 4px', borderRadius: '2px' }}>収入</mark>に変える。</span>
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          style={{ marginBottom: '20px' }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          style={{ marginTop: '116px', display: 'flex', justifyContent: 'center' }}
         >
-          <p style={{ fontWeight: 700, fontSize: '26px', lineHeight: '44px', color: '#161c2d', letterSpacing: '-0.5px' }}>「特出した能力がないから自分は何もできない」</p>
-          <p style={{ fontWeight: 700, fontSize: '26px', lineHeight: '44px', color: '#161c2d', letterSpacing: '-0.5px' }}>「満足してないけど何がしたいか分からない」</p>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          style={{ fontWeight: 800, fontSize: '30px', lineHeight: '46px', color: '#022769', letterSpacing: '-0.8px', marginBottom: '24px' }}
-        >
-          そう思っている人ほど、AIで人生を変えられる
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          style={{ marginBottom: '44px' }}
-        >
-          <p style={{ fontWeight: 600, fontSize: '22px', lineHeight: '40px', color: '#161c2d', letterSpacing: '-0.3px' }}>あなただけの「強み」を脳科学に基づいたコーチング理論で特定し、</p>
-          <p style={{ fontWeight: 600, fontSize: '22px', lineHeight: '40px', color: '#161c2d', letterSpacing: '-0.3px' }}>あなたの強みに基づいたAIビジネスを設計。</p>
-          <p style={{ fontWeight: 600, fontSize: '22px', lineHeight: '40px', color: '#161c2d', letterSpacing: '-0.3px' }}>そして収益化まで徹底的にサポート。</p>
-          <p style={{ fontWeight: 600, fontSize: '22px', lineHeight: '40px', color: '#161c2d', letterSpacing: '-0.3px' }}>理想だけで終わらない人生を動かす0→1支援サービス。</p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.5, delay: 1.0 }}
-          style={{ display: 'flex', justifyContent: 'center' }}
-        >
-          <a href="#" className="btn-blue" style={{ width: '460px', height: '70px', fontSize: '20px' }}>
+          <a href="https://lin.ee/OatLRGd" className="btn-blue" target="_blank" rel="noopener noreferrer" style={{ width: '354px', height: '72px', fontSize: '25px' }}>
             <span>無料相談を予約する</span>
           </a>
         </motion.div>
