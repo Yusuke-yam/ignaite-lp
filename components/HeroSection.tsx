@@ -20,10 +20,10 @@ export function HeroSection() {
 
         {/* Text content */}
         <div style={{ padding: '32px 24px', background: '#fff', textAlign: 'center', marginTop: '-75px' }}>
-          <img src="/images/logo.png" alt="IgnAIte" style={{ width: '120%', maxWidth: '480px', height: 'auto', display: 'block', margin: '0 auto 24px' }} />
+          <img src="/images/logo.png" alt="IgnAIte" style={{ width: '100%', maxWidth: '360px', height: 'auto', display: 'block', margin: '0 auto 24px' }} />
 
           <div style={{ marginTop: '-113px' }}>
-            <p style={{ fontWeight: 700, fontSize: '22px', lineHeight: '1.6', color: '#022769', marginBottom: '24px' }}>
+            <p style={{ fontWeight: 700, fontSize: '18px', lineHeight: '1.6', color: '#022769', marginBottom: '24px' }}>
               <span style={{ whiteSpace: 'nowrap' }}>
                 <span style={{ background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>認知科学コーチング</span>
                 ×

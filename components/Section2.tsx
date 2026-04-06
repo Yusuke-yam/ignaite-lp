@@ -51,11 +51,11 @@ export function Section2() {
 
         {/* Content */}
         <div style={{ padding: '32px 20px', position: 'relative', zIndex: 1 }}>
-          <p style={{ fontWeight: 700, fontSize: '17px', color: '#161c2d', marginBottom: '10px', lineHeight: '1.5', textAlign: 'center' }}>
+          <p style={{ fontWeight: 700, fontSize: '15px', color: '#161c2d', marginBottom: '10px', lineHeight: '1.5', textAlign: 'center' }}>
             「いつか副業や個人事業でもっと稼ぎたい」<br />
             「いつか環境に縛られずに自由に働きたい」
           </p>
-          <p style={{ fontWeight: 700, fontSize: '17px', color: '#161c2d', marginBottom: '24px', lineHeight: '1.5', textAlign: 'center' }}>
+          <p style={{ fontWeight: 700, fontSize: '15px', color: '#161c2d', marginBottom: '24px', lineHeight: '1.5', textAlign: 'center' }}>
             <span style={{ display: 'block', marginBottom: '10px' }}>でも</span>
             「自分には特別な経験も能力もない」<br />
             そんな自分の思い込みで夢を諦めてませんか？
@@ -66,18 +66,16 @@ export function Section2() {
               <div key={i} style={{
                 ...cardBase,
                 padding: '14px 14px',
-                width: 'fit-content',
-                maxWidth: '82%',
-                alignSelf: i === 1 ? 'flex-end' : 'flex-start',
+                width: '100%',
               }}>
-                <p style={{ ...goldGradientText, fontWeight: 700, fontSize: '15px', lineHeight: '1.6', marginBottom: '6px', whiteSpace: i === 0 ? 'nowrap' : 'pre-line' }}>{i === 0 ? card.title.replace(/\n/g, '') : card.title}</p>
-                <p style={{ color: '#fff', fontSize: '15px', lineHeight: '1.7', whiteSpace: 'pre-line' }}>{card.body}</p>
+                <p style={{ ...goldGradientText, fontWeight: 700, fontSize: '15px', lineHeight: '1.6', marginBottom: '6px', whiteSpace: 'pre-line' }}>{card.title}</p>
+                <p style={{ color: '#fff', fontSize: '15px', lineHeight: '1.7', whiteSpace: 'pre-line', fontWeight: 700 }}>{card.body}</p>
               </div>
             ))}
           </div>
 
           <p style={{ fontWeight: 700, fontSize: '17px', color: '#161c2d', textAlign: 'center', lineHeight: '1.5' }}>
-            こんな人が多すぎます。本当にもったいないです。<br />
+            こんな人が多すぎます。<br />本当にもったいないです。<br />
             <br />
             なぜなら今の世の中、AIを使いこなせば<br />
             副業や個人事業で誰でも絶対に収益化できるからです。

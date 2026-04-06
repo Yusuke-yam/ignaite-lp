@@ -70,7 +70,7 @@ export function Section6() {
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/section6-bg2.png)', backgroundSize: 'cover', backgroundPosition: '95% center', opacity: 0.6, zIndex: 0 }} />
 
         <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100%', padding: '40px 20px' }}>
-          <p style={{ fontWeight: 700, fontSize: '21px', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
+          <p style={{ fontWeight: 700, fontSize: '16px', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
             多くの方が実際にIgnAIteで成果を出されています。<br />
             無料相談であなたも自分の可能性を見てみませんか？
           </p>
