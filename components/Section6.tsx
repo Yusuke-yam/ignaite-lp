@@ -74,7 +74,7 @@ export function Section6() {
             style={{ fontWeight: 700, fontSize: '4.6vw', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', whiteSpace: 'nowrap' }}
             initial={{ opacity: 0, y: -15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.6 }}
           >
             <p style={{ marginBottom: '4px' }}>多くの方が成果を出されています。</p>
@@ -85,7 +85,7 @@ export function Section6() {
             style={{ fontWeight: 800, fontSize: '14px', lineHeight: '1.4', textAlign: 'center', marginTop: '95px', marginBottom: '57px', color: '#022769', whiteSpace: 'nowrap' }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.5 }}
           >
             ▼クライアントの方からいただいたお声の一例
@@ -96,7 +96,7 @@ export function Section6() {
             style={{ width: '90%', marginBottom: '36px', marginTop: '-57px' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: false, amount: 0.4 }}
             transition={{ duration: 0.6 }}
           >
             <Carousel height="240px" />
@@ -106,7 +106,7 @@ export function Section6() {
             style={{ marginTop: '-19px', width: '100%', display: 'flex', justifyContent: 'center' }}
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.5 }}
           >
             <a href="https://lin.ee/OatLRGd" className="btn-blue pulse-btn" target="_blank" rel="noopener noreferrer" style={{ width: '80%', maxWidth: '280px', height: '52px', fontSize: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}>

@@ -54,7 +54,7 @@ export function Section2() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: false, amount: 0.4 }}
             transition={{ duration: 0.6 }}
           >
             <p style={{ fontWeight: 700, fontSize: '15px', color: '#161c2d', marginBottom: '10px', lineHeight: '1.5', textAlign: 'center' }}>
@@ -74,7 +74,7 @@ export function Section2() {
                 key={i}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: false, amount: 0.5 }}
                 transition={{ duration: 0.5 }}
                 style={{ ...cardBase, padding: '14px 14px', width: '100%' }}
               >
@@ -88,7 +88,7 @@ export function Section2() {
             style={{ fontWeight: 700, fontSize: '14px', color: '#161c2d', textAlign: 'center', lineHeight: '1.5' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: false, amount: 0.4 }}
             transition={{ duration: 0.6 }}
           >
             こんな人が多すぎます。<br />本当にもったいないです。<br />
