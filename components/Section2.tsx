@@ -68,7 +68,7 @@ export function Section2() {
                 padding: '14px 14px',
                 width: '100%',
               }}>
-                <p style={{ ...goldGradientText, fontWeight: 700, fontSize: '15px', lineHeight: '1.6', marginBottom: '6px', whiteSpace: 'pre-line' }}>{card.title}</p>
+                <p style={{ ...goldGradientText, fontWeight: 700, fontSize: '15px', lineHeight: '1.6', marginBottom: '6px', whiteSpace: 'pre-line' }}>{i === 0 ? '自分で稼ぐのは、「一部のすごい人の話」\nだと思っている' : card.title}</p>
                 <p style={{ color: '#fff', fontSize: '15px', lineHeight: '1.7', whiteSpace: 'pre-line', fontWeight: 700 }}>{card.body}</p>
               </div>
             ))}
