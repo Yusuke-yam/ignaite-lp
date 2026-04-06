@@ -10,7 +10,7 @@ const jissekiImages = [
   { src: '/images/jisseki4.png', alt: '実績4' },
 ]
 
-function Carousel({ height }: { height: string }) {
+function Carousel({ height, padding = '20px' }: { height: string, padding?: string }) {
   const [current, setCurrent] = useState(0)
 
   const prev = () => setCurrent((c) => (c - 1 + jissekiImages.length) % jissekiImages.length)
@@ -19,7 +19,7 @@ function Carousel({ height }: { height: string }) {
   return (
     <div style={{ position: 'relative', width: '100%' }}>
       {/* Image */}
-      <div style={{ borderRadius: '14px', overflow: 'hidden', background: '#fff', width: '100%', minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ borderRadius: '14px', overflow: 'hidden', background: '#fff', width: '100%', padding: `${padding} 0`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <AnimatePresence mode="wait">
           <motion.img
             key={current}
@@ -99,7 +99,7 @@ export function Section6() {
             viewport={{ once: false, amount: 0.4 }}
             transition={{ duration: 0.6 }}
           >
-            <Carousel height="240px" />
+            <Carousel height="240px" padding="12px" />
           </motion.div>
 
           <motion.div
@@ -153,7 +153,7 @@ export function Section6() {
           transition={{ duration: 0.7, delay: 0.3 }}
           style={{ width: '60%', maxWidth: '576px', marginBottom: '36px', marginTop: '-57px' }}
         >
-          <Carousel height="360px" />
+          <Carousel height="360px" padding="18px" />
         </motion.div>
 
         <motion.div
