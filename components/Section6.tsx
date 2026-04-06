@@ -19,7 +19,7 @@ function Carousel({ height }: { height: string }) {
   return (
     <div style={{ position: 'relative', width: '100%' }}>
       {/* Image */}
-      <div style={{ borderRadius: '14px', overflow: 'hidden', background: '#fff', width: '100%', minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ borderRadius: '14px', overflow: 'hidden', background: 'linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)), url(/images/section6-bg.png) center/cover', width: '100%', minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <AnimatePresence mode="wait">
           <motion.img
             key={current}
