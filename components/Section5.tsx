@@ -75,10 +75,10 @@ export function Section5() {
         </div>
 
         {/* Text */}
-        <div style={{ fontSize: '15px', color: '#022769', lineHeight: '1.6', fontWeight: 800, textAlign: 'center', marginTop: '38px' }}>
+        <div style={{ fontSize: '14px', color: '#022769', lineHeight: '1.6', fontWeight: 800, textAlign: 'center', marginTop: '38px' }}>
           <p style={{ color: '#E7A200', fontWeight: 800, marginBottom: '16px' }}>IgnAIteはあなたの強みを見つけ、<br />AIを使って必ず稼げる状態までサポートします。</p>
-          <p style={{ marginBottom: '16px' }}>あなたは強みや能力がないのではありません。<br />ただ「自分の強み、能力」に気づいていないだけです。</p>
-          <p style={{ marginBottom: '16px' }}>IgnAIteでは「あなたに合ったAIの活かし方」を明確にし、<br />必要なAI知識の学習から案件納品まで<br />一気通貫で伴走する唯一無二のサービスです。</p>
+          <p style={{ marginBottom: '16px' }}>あなたは強み,能力がないのではありません。<br />自分の強み,能力に気づいていないだけです。</p>
+          <p style={{ marginBottom: '16px' }}>IgnAIteは個人に合ったAIの活かし方を明確にし、<br />必要なAI知識の学習から案件納品まで<br />一気通貫で伴走する唯一無二のサービスです。</p>
           <p>これまで一部のすごい人だけのものだった挑戦が、<br />あなたの現実になります。</p>
         </div>
         </div>

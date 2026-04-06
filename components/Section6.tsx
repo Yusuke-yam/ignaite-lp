@@ -69,10 +69,10 @@ export function Section6() {
       <section ref={ref} style={{ width: '100%', position: 'relative', overflow: 'hidden', padding: '48px 20px 56px' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/section6-bg2.png)', backgroundSize: 'cover', backgroundPosition: '95% center', opacity: 0.6, zIndex: 0 }} />
 
-        <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100%', padding: '40px 20px' }}>
-          <div style={{ fontWeight: 700, fontSize: '19px', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
-            <p style={{ marginBottom: '4px' }}>多くの方が<br />IgnAIteで成果を残しています。</p>
-            <p>無料相談であなたも<br />自分の可能性を見てみませんか？</p>
+        <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100%', padding: '40px 5px' }}>
+          <div style={{ fontWeight: 700, fontSize: '13px', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
+            <p style={{ marginBottom: '4px' }}>多くの方がIgnAIteで成果を残しています。</p>
+            <p>無料相談であなたも自分の可能性を見てみませんか？</p>
           </div>
 
           <h2 style={{ fontWeight: 800, fontSize: '14px', lineHeight: '1.4', textAlign: 'center', marginTop: '95px', marginBottom: '57px', color: '#022769', whiteSpace: 'nowrap' }}>
