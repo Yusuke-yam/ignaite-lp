@@ -82,7 +82,7 @@ export function Section6() {
           </motion.div>
 
           <motion.h2
-            style={{ fontWeight: 800, fontSize: '14px', lineHeight: '1.4', textAlign: 'center', marginTop: '95px', marginBottom: '57px', color: '#022769', whiteSpace: 'nowrap' }}
+            style={{ fontWeight: 800, fontSize: '14px', lineHeight: '1.4', textAlign: 'center', marginTop: '76px', marginBottom: '57px', whiteSpace: 'nowrap', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: false, amount: 0.5 }}
@@ -141,7 +141,7 @@ export function Section6() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
-          style={{ fontWeight: 800, fontSize: '28px', lineHeight: '1.4', textAlign: 'center', marginTop: '95px', marginBottom: '57px', letterSpacing: '-0.8px', color: '#022769' }}
+          style={{ fontWeight: 800, fontSize: '28px', lineHeight: '1.4', textAlign: 'center', marginTop: '76px', marginBottom: '57px', letterSpacing: '-0.8px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}
         >
           ▼クライアントの方からいただいたお声の一例
         </motion.h2>
