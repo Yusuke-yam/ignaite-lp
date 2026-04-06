@@ -61,8 +61,9 @@ export function Section5() {
         <motion.h3
           style={{ fontWeight: 800, fontSize: '18px', color: '#022769', textAlign: 'center', marginBottom: '20px', marginTop: '-38px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}
           initial={{ opacity: 0, y: -15 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
         >
           <img src="/images/logo.png" alt="IgnAIte" style={{ height: '130px', width: 'auto', display: 'inline-block' }} />
           <span style={{ marginLeft: '-38px' }}>6ステップ</span>
@@ -73,8 +74,9 @@ export function Section5() {
               key={step.num}
               style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'linear-gradient(135deg, #0a1e4a 0%, #0d2460 60%, #0a1a40 100%)', border: '1.5px solid #1a3a7a', borderRadius: '12px', padding: '14px 16px' }}
               initial={{ opacity: 0, x: -20 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.45, delay: 0.2 + i * 0.07 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.45 }}
             >
               <span style={{ flexShrink: 0, width: '28px', height: '28px', borderRadius: '50%', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', color: '#022769', fontWeight: 800, fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{step.num}</span>
               <div>
@@ -89,8 +91,9 @@ export function Section5() {
         <motion.div
           style={{ fontSize: '14px', color: '#022769', lineHeight: '1.6', fontWeight: 800, textAlign: 'center', marginTop: '38px' }}
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
         >
           <p style={{ color: '#E7A200', fontWeight: 800, marginBottom: '16px' }}>IgnAIteはあなたの強みを見つけ、<br />AIを使って必ず稼げる状態までサポートします。</p>
           <p style={{ marginBottom: '16px' }}>あなたは強み,能力がないのではありません。<br />自分の強み,能力に気づいていないだけです。</p>

@@ -73,8 +73,9 @@ export function Section6() {
           <motion.div
             style={{ fontWeight: 700, fontSize: '4.6vw', lineHeight: '1.6', textAlign: 'center', marginBottom: '-22px', background: 'linear-gradient(90deg, #E7A200, #FEE21C)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', whiteSpace: 'nowrap' }}
             initial={{ opacity: 0, y: -15 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
             <p style={{ marginBottom: '4px' }}>多くの方が成果を出されています。</p>
             <p>あなたも自分の可能性を見てみませんか？</p>
@@ -83,8 +84,9 @@ export function Section6() {
           <motion.h2
             style={{ fontWeight: 800, fontSize: '14px', lineHeight: '1.4', textAlign: 'center', marginTop: '95px', marginBottom: '57px', color: '#022769', whiteSpace: 'nowrap' }}
             initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
           >
             ▼クライアントの方からいただいたお声の一例
           </motion.h2>
@@ -93,8 +95,9 @@ export function Section6() {
           <motion.div
             style={{ width: '90%', marginBottom: '36px', marginTop: '-57px' }}
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6 }}
           >
             <Carousel height="240px" />
           </motion.div>
@@ -102,8 +105,9 @@ export function Section6() {
           <motion.div
             style={{ marginTop: '-19px', width: '100%', display: 'flex', justifyContent: 'center' }}
             initial={{ opacity: 0, y: 15 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
           >
             <a href="https://lin.ee/OatLRGd" className="btn-blue pulse-btn" target="_blank" rel="noopener noreferrer" style={{ width: '80%', maxWidth: '280px', height: '52px', fontSize: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}>
               <span>無料相談を予約する</span>

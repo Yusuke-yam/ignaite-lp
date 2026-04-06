@@ -53,8 +53,9 @@ export function Section2() {
         <div style={{ padding: '32px 20px', position: 'relative', zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6 }}
           >
             <p style={{ fontWeight: 700, fontSize: '15px', color: '#161c2d', marginBottom: '10px', lineHeight: '1.5', textAlign: 'center' }}>
               「いつか副業や個人事業でもっと稼ぎたい」<br />
@@ -72,8 +73,9 @@ export function Section2() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 24 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 + i * 0.12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5 }}
                 style={{ ...cardBase, padding: '14px 14px', width: '100%' }}
               >
                 <p style={{ ...goldGradientText, fontWeight: 700, fontSize: '15px', lineHeight: '1.6', marginBottom: '6px', whiteSpace: 'pre-line' }}>{i === 0 ? '自分で稼ぐのは、「一部のすごい人の話」\nだと思っている' : card.title}</p>
@@ -85,8 +87,9 @@ export function Section2() {
           <motion.p
             style={{ fontWeight: 700, fontSize: '14px', color: '#161c2d', textAlign: 'center', lineHeight: '1.5' }}
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6 }}
           >
             こんな人が多すぎます。<br />本当にもったいないです。<br />
             <br />
