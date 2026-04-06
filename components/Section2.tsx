@@ -74,7 +74,7 @@ export function Section2() {
             ))}
           </div>
 
-          <p style={{ fontWeight: 700, fontSize: '17px', color: '#161c2d', textAlign: 'center', lineHeight: '1.5' }}>
+          <p style={{ fontWeight: 700, fontSize: '14px', color: '#161c2d', textAlign: 'center', lineHeight: '1.5' }}>
             こんな人が多すぎます。<br />本当にもったいないです。<br />
             <br />
             なぜなら今の世の中、AIを使いこなせば<br />
